@@ -66,7 +66,7 @@ auth.init = async function(app, db, tokensecret) {
     _tokensecret = tokensecret;
     _db = db;
 
-    var schema = JSON.parse(fs.readFileSync('./dbschema.json'));
+    var schema = JSON.parse(fs.readFileSync(__dirname + '/dbschema.json'));
     await _db.init(schema);
 
     app.post('/api/auth/login', login);
