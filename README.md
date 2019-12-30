@@ -1,6 +1,15 @@
 # auth
 
-Authentifizierung für NodeJS basierte Anwendungen wie LIAGA oder Notizbuch.
+Authentifizierung für NodeJS basierte Anwendungen wie [LIAGA](https://gogs.levelupsoftware.de/levelupsoftware/liaga) oder [Notizbuch](https://gogs.levelupsoftware.de/levelupsoftware/notebook.levelupsoftware.de).
+
+## Datenbanktabellen
+
+### user
+
+|Spalte|Datentyp|
+|---|---|
+|username|varchar(255) not null|
+|password|varchar(255) not null|
 
 ## APIs
 
