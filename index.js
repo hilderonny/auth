@@ -2,6 +2,7 @@ var express = require('express');
 var jsonwebtoken = require('jsonwebtoken');
 var bcryptjs = require('bcryptjs');
 var fs = require('fs');
+var bodyparser = require('body-parser');
 
 var _tokensecret, _db;
 
@@ -68,6 +69,8 @@ auth.init = async function(app, db, tokensecret) {
 
     var schema = JSON.parse(fs.readFileSync(__dirname + '/dbschema.json'));
     await _db.init(schema);
+
+    app.use(bodyparser.json());
 
     app.post('/api/auth/login', login);
     app.post('/api/auth/register', register);
